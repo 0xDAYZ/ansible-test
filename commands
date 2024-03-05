@@ -13,3 +13,7 @@
 [+] ansible all -m apt -a "name=tcpdump state=latest" --become --ask-become-pass -> "" to run provide multiple arguments
 [+] ansible all -m apt -a upgrade=dist --become --ask-become-pass
 ##### END #####
+#
+##### PLAYBOOKS #####
+
+[+] ansible-playbook --ask-become-pass install_playbook.yml

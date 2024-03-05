@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: Update Package Index
+    apt:
+      update_cache: true
+
+  - name: Install Neofetch
+    apt:
+      name: neofetch
+      state: latest
