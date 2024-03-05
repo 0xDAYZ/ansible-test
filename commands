@@ -1,0 +1,7 @@
+##### AD-HOC COMMANDS #####
+[+] ansible all --key-file /home/ansible-master/.ssh/id_ansible_main -i inventory -m ping
+[+] ansible all -m ping -> After setting defaults
+[+] ansible all --list-hosts
+[+] ansible all -m gather_facts
+[+] ansible all -m gather_facts --limit ansible-slave@172.31.24.153
+##### END #####
