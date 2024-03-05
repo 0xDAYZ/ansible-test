@@ -7,8 +7,10 @@
   - name: Update Package Index
     apt:
       update_cache: true
+    when: ansible_distribution == "Ubuntu"
 
   - name: Install Neofetch
     apt:
       name: neofetch
       state: latest
+    when: ansible_distribution in [ "Ubuntu", "Debian" ]
