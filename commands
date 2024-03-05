@@ -5,3 +5,11 @@
 [+] ansible all -m gather_facts
 [+] ansible all -m gather_facts --limit ansible-slave@172.31.24.153
 ##### END #####
+#
+##### ELEVATED AD-HOC COMMANDS #####
+[+] ansible all -m apt -a update_cache=true
+[+] ansible all -m apt -a update_cache=true --become --ask-become-pass
+[+] ansible all -m apt -a name=cowsay --become --ask-become-pass
+[+] ansible all -m apt -a "name=tcpdump state=latest" --become --ask-become-pass -> "" to run provide multiple arguments
+[+] ansible all -m apt -a upgrade=dist --become --ask-become-pass
+##### END #####
