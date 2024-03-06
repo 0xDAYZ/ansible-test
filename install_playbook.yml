@@ -4,13 +4,10 @@
   become: true
   tasks:
   
-  - name: Update Package Index
-    apt:
-      update_cache: true
-    when: ansible_distribution == "Ubuntu"
-
-  - name: Install Neofetch
-    apt:
-      name: neofetch
+  - name: Install Neofetch and BPython
+    package:
+      name: 
+        - "{{ neofetch_package }}"
+        - "{{ bpython_package }}"
       state: latest
-    when: ansible_distribution in [ "Ubuntu", "Debian" ]
+      update_cache: true

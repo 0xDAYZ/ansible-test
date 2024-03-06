@@ -1,2 +1,2 @@
-ansible-slave@172.31.24.19
-ansible-slave@172.31.24.153
+ansible-slave@172.31.24.19 neofetch_package=neofetch bpython_package=bpython
+ansible-slave@172.31.24.153 neofetch_package=neofetch bpython_package=bpython
