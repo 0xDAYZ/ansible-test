@@ -10,6 +10,23 @@
       update_cache: true
     when: ansible_distribution == "Ubuntu"
 
+  - name: Install Unzip
+    tags: unzip
+    package:
+      name: unzip
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Install FastFetch
+    tags: fastfetch, unzip
+    unarchive:
+      src: https://github.com/fastfetch-cli/fastfetch/releases/download/2.8.7/fastfetch-linux-amd64.zip
+      dest: /usr/bin/
+      remote_src: true
+      owner: root
+      group: root
+      mode: 0777
+    when: ansible_distribution == "Ubuntu"
+
 - hosts: web_server
   become: true
   tasks:
@@ -18,6 +35,16 @@
     apt:
       name: apache2
       state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: Copy index.html
+    tags: Ubuntu, Apache2, WebServer
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
     when: ansible_distribution == "Ubuntu"
 
 - hosts: db_server
