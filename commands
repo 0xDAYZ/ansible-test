@@ -17,4 +17,9 @@
 ##### PLAYBOOKS #####
 [+] ansible-playbook --ask-become-pass install_playbook.yml
 ##### END #####
-
+#
+##### TAGS #####
+[+] ansible-playbook --list-tags site_deploy.yml
+[+] ansible-playbook --tags SQL --ask-become-pass site_deploy.yml
+[+] ansible-playbook --tags "SQL,Ubuntu" --ask-become-pass site_deploy.yml
+##### END #####
